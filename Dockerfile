@@ -15,9 +15,9 @@ COPY nipkg.ini nipkg.ini
 WORKDIR "/Program Files/National Instruments/NI Package Manager"
 
 RUN nipkg.exe feed-add --name=ni-labview-2019-core-x86-en-2019-released https://download.ni.com/support/nipkg/products/ni-l/ni-labview-2019-x86/19.0/released &&\
-    nipkg.exe update
-RUN nipkg.exe install --passive --accept-eulas --yes ni-labview-2019-core-x86-en & exit 0
-RUN nipkg.exe install --passive --accept-eulas --yes ni-labview-command-line-interface-x86
+    nipkg.exe update &&\
+    nipkg.exe install --passive --accept-eulas --yes ni-labview-2019-core-x86-en & exit 0 &&\
+    nipkg.exe install --passive --accept-eulas --yes ni-labview-command-line-interface-x86
 
 WORKDIR "/Program Files (x86)/National Instruments/LabVIEW 2019"
 COPY labview.ini LabVIEW.ini
