@@ -9,8 +9,6 @@ RUN powershell -Command Invoke-WebRequest $Env:NIPM_201 -OutFile 'NIPackageManag
     NIPackageManager20.1.0.exe --passive --accept-eulas --prevent-reboot &&\
     del NIPackageManager20.1.0.exe
 
-WORKDIR /%localappdata%/National Instruments/NI Package Manager
-COPY nipkg.ini nipkg.ini
 
 WORKDIR "/Program Files/National Instruments/NI Package Manager"
 
