@@ -1,0 +1,19 @@
+{
+    "builders": [
+        {
+            "type": "docker",
+            "image": "mcr.microsoft.com/dotnet/framework/runtime",
+            "container_dir": "c:/app",
+            "windows_container": true,
+            "commit": true
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "echo 'hello world'"
+            ]
+        }
+    ]
+}
